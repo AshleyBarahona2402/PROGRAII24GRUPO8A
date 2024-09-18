@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import Modelo.LoginDAO;
+import Modelo.login;
+
 /**
  *
  * @author Dell
@@ -13,11 +16,26 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
+    public void Validar(){
+        String Correo = txtCorreo.getText();
+        String Contraseña = String.valueOf(txtContraseña.getPassword());
+        if(!"".equals(Correo)|| !"".equals(Contraseña)){
+            login lg = new login();
+            LoginDAO login = new LoginDAO();
+            lg = login.log(Correo, Contraseña);
+            if(lg.getCorreo()!=null && lg.getContraseña()!=null){
+                Sistema sis = new Sistema();
+                sis.setVisible(true);
+                dispose();
+                
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,6 +73,11 @@ public class Login extends javax.swing.JFrame {
 
         jButton1.setForeground(new java.awt.Color(51, 51, 255));
         jButton1.setText("Iniciar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\PrograII24Grupo8A\\src\\main\\java\\Imagenes\\iniciar.png")); // NOI18N
 
@@ -88,12 +111,12 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(45, Short.MAX_VALUE))
         );
@@ -110,6 +133,10 @@ public class Login extends javax.swing.JFrame {
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    Validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
