@@ -14,16 +14,15 @@ public class LoginDAO {
 
     public login log(String Correo, String Contraseña) {
         login l = new login();
-        String sql = "SELECT * FROM Usuarios WHERE Correo = 'Andy@gmail.com' AND Contraseña = '123'";
+        String sql = "SELECT * FROM Usuarios WHERE Correo = ? AND Contraseña = ?";
         try {
-            con = cn.getConnection();
+            con = cn.getConexion();
             ps = con.prepareStatement(sql);
             ps.setString(1, Correo);
             ps.setString(2, Contraseña);
             rs = ps.executeQuery();
             if (rs.next()) {
                 l.setID(rs.getInt("ID"));
-                l.setNombre(rs.getString("Nombre"));
                 l.setCorreo(rs.getString("Correo"));
                 l.setContraseña(rs.getString("Contraseña"));
             }
