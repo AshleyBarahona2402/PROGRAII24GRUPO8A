@@ -9,7 +9,7 @@ package Modelo;
     public login() {
     }
 
-    public login(int ID, String Nombre, String Correo, String Contraseña) {
+    public login(int ID,String Correo, String Contraseña) {
         this.ID = ID;
         this.Correo = Correo;
         this.Contraseña = Contraseña;
