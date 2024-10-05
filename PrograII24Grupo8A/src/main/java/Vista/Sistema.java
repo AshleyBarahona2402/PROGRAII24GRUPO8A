@@ -4,6 +4,12 @@
  */
 package Vista;
 
+import Modelo.Cliente;
+import Modelo.ClienteDAO;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Dell
@@ -120,7 +126,6 @@ public class Sistema extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\Nventa.png")); // NOI18N
         jButton1.setText("Nueva Venta");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,19 +133,13 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\Clientes.png")); // NOI18N
         jButton2.setText("Clientes");
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\proveedor.png")); // NOI18N
         jButton3.setText("Proveedores");
 
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\producto.png")); // NOI18N
         jButton4.setText("Inventarios");
 
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\compras.png")); // NOI18N
         jButton5.setText("Ventas");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\carreta de super.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -176,8 +175,6 @@ public class Sistema extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 540));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\encabezado.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 700, 120));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -198,18 +195,12 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnGuardarProveedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\GuardarTodo.png")); // NOI18N
         btnGuardarProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarProveedorActionPerformed(evt);
             }
         });
 
-        btnEditarProveedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\Actualizar (2).png")); // NOI18N
-
-        btnEliminarProveedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\eliminar.png")); // NOI18N
-
-        btnNuevoProveedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoProveedorActionPerformed(evt);
@@ -268,10 +259,10 @@ public class Sistema extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnGuardarProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
+                            .addComponent(btnGuardarProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnEditarProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                            .addComponent(btnEditarProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnNuevoProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(58, 58, 58))
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -359,20 +350,11 @@ public class Sistema extends javax.swing.JFrame {
             tableInventario.getColumnModel().getColumn(4).setPreferredWidth(70);
         }
 
-        btnGuardarInventario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\GuardarTodo.png")); // NOI18N
-
-        btnEditarInventario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\Actualizar (2).png")); // NOI18N
-
-        btnEliminarInventario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarInventarioActionPerformed(evt);
             }
         });
-
-        btnNuevoInventario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\nuevo.png")); // NOI18N
-
-        btnExcelInventario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\excel.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -485,8 +467,6 @@ public class Sistema extends javax.swing.JFrame {
             tableVentas.getColumnModel().getColumn(3).setPreferredWidth(50);
         }
 
-        txtPDFVentas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\pdf.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -531,7 +511,6 @@ public class Sistema extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Stock");
 
-        btnEliminarVenta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\eliminar.png")); // NOI18N
         btnEliminarVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarVentaActionPerformed(evt);
@@ -574,8 +553,6 @@ public class Sistema extends javax.swing.JFrame {
         jLabel9.setText("Nombre");
 
         txtNombreVenta.setEditable(false);
-
-        btnGenerarVenta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\print.png")); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("Total a Pagar");
@@ -715,18 +692,18 @@ public class Sistema extends javax.swing.JFrame {
             tableCliente.getColumnModel().getColumn(3).setPreferredWidth(30);
         }
 
-        btnGuardarCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\GuardarTodo.png")); // NOI18N
+        btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarClienteActionPerformed(evt);
+            }
+        });
 
-        btnEditarCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\Actualizar (2).png")); // NOI18N
         btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarClienteActionPerformed(evt);
             }
         });
 
-        btnEliminarCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\eliminar.png")); // NOI18N
-
-        btnNuevoCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\Imagenes\\nuevo.png")); // NOI18N
         btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoClienteActionPerformed(evt);
@@ -749,7 +726,7 @@ public class Sistema extends javax.swing.JFrame {
                                     .addComponent(btnEliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnEditarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                                    .addComponent(btnEditarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnNuevoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(42, 42, 42))
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -854,6 +831,22 @@ public class Sistema extends javax.swing.JFrame {
     private void txtDescripcionVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescripcionVentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDescripcionVentaActionPerformed
+
+    private void btnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClienteActionPerformed
+        // TODO add your handling code here:
+        if ("".equals(txtNitCliente.getText())) {
+            JOptionPane.showMessageDialog(null, "Seleccione que Actualizara");
+            if (!"".equals(txtNitCliente.getText()) || !"".equals(txtIDCliente.getText())|| !"".equals(txtNombreCliente.getText()) || !"".equals(txtDireccionCliente.getText()) || !"".equals(txtTelefonoCliente.getText())) {
+                cl.setNit(Integer.parseInt(txtNitCliente.getText()));                
+                cl.setID(Integer.parseInt(txtIDCliente.getText()));  
+                cl.setNombre(txtNombreCliente.getText());
+                cl.setDireccion(txtDireccionCliente.getText());
+                cl.setTelefono(Integer.parseInt(txtTelefonoCliente.getText()));
+                Clien.ActualizarCliente(cl);
+        } 
+
+        }
+    }//GEN-LAST:event_btnGuardarClienteActionPerformed
 
     /**
      * @param args the command line arguments

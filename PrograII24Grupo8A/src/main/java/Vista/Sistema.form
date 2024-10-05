@@ -77,9 +77,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\Nventa.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Nueva Venta"/>
           </Properties>
           <Events>
@@ -88,51 +85,29 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\Clientes.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Clientes"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\proveedor.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Proveedores"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\producto.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Inventarios"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\compras.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Ventas"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\carreta de super.png"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\encabezado.png"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="190" y="0" width="700" height="120"/>
@@ -203,11 +178,11 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="btnEliminarProveedor" max="32767" attributes="0"/>
-                                  <Component id="btnGuardarProveedor" pref="44" max="32767" attributes="0"/>
+                                  <Component id="btnGuardarProveedor" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btnEditarProveedor" pref="42" max="32767" attributes="0"/>
+                                  <Component id="btnEditarProveedor" max="32767" attributes="0"/>
                                   <Component id="btnNuevoProveedor" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -324,35 +299,15 @@
             <Component class="javax.swing.JTextField" name="txtTelefonoProveedor">
             </Component>
             <Component class="javax.swing.JButton" name="btnGuardarProveedor">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\GuardarTodo.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarProveedorActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEditarProveedor">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\Actualizar (2).png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnEliminarProveedor">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\eliminar.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnNuevoProveedor">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\nuevo.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevoProveedorActionPerformed"/>
               </Events>
@@ -655,42 +610,17 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JButton" name="btnGuardarInventario">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\GuardarTodo.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnEditarInventario">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\Actualizar (2).png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnEliminarInventario">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\eliminar.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarInventarioActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnNuevoInventario">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\nuevo.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnExcelInventario">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\excel.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtIdInventario">
             </Component>
@@ -787,11 +717,6 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JButton" name="txtPDFVentas">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\pdf.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtIdVentas">
             </Component>
@@ -985,11 +910,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnEliminarVenta">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\eliminar.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarVentaActionPerformed"/>
               </Events>
@@ -1088,11 +1008,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnGenerarVenta">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\print.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
@@ -1135,7 +1050,7 @@
                                       </Group>
                                       <EmptySpace pref="41" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="btnEditarCliente" pref="39" max="32767" attributes="0"/>
+                                          <Component id="btnEditarCliente" max="32767" attributes="0"/>
                                           <Component id="btnNuevoCliente" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
@@ -1305,35 +1220,18 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JButton" name="btnGuardarCliente">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\GuardarTodo.png"/>
-                </Property>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarClienteActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEditarCliente">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\Actualizar (2).png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarClienteActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEliminarCliente">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\eliminar.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnNuevoCliente">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Dell\Documents\Imagenes\nuevo.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevoClienteActionPerformed"/>
               </Events>
