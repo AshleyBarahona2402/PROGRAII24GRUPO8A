@@ -31,6 +31,7 @@ Productos pro = new Productos();
 ProductosDao ProDao = new ProductosDao();
 DefaultTableModel modelo = new DefaultTableModel();
 int item;
+double Totalpagar = 0.00;
 
     public Sistema() {
         initComponents();
@@ -111,7 +112,7 @@ public void LimpiarTabla(){
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        Productos_panel = new javax.swing.JTabbedPane();
+        Venta_panel = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -205,8 +206,8 @@ public void LimpiarTabla(){
         jButton9 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txt_nombre_venta = new javax.swing.JTextField();
-        txt_cod_venta = new javax.swing.JTextField();
+        txt_nombrecli_venta = new javax.swing.JTextField();
+        txt_id_venta = new javax.swing.JTextField();
         btn_imprimir_venta = new javax.swing.JButton();
         labeltotal = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -295,7 +296,7 @@ public void LimpiarTabla(){
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 650));
 
-        Productos_panel.setOpaque(true);
+        Venta_panel.setOpaque(true);
 
         jLabel4.setText("CODIGO");
 
@@ -308,6 +309,11 @@ public void LimpiarTabla(){
         jLabel8.setText("STOCK");
 
         btn_eliminar_venta.setText("ELIMINAR");
+        btn_eliminar_venta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminar_ventaActionPerformed(evt);
+            }
+        });
 
         txt_codigo_venta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -430,7 +436,7 @@ public void LimpiarTabla(){
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        Productos_panel.addTab("VENTA", jPanel8);
+        Venta_panel.addTab("VENTA", jPanel8);
 
         jLabel19.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel19.setText("ID CLIENTE");
@@ -575,7 +581,7 @@ public void LimpiarTabla(){
                 .addGap(0, 27, Short.MAX_VALUE))
         );
 
-        Productos_panel.addTab("CLIENTES", jPanel4);
+        Venta_panel.addTab("CLIENTES", jPanel4);
 
         jLabel24.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel24.setText("ID PROVEEDOR");
@@ -724,7 +730,7 @@ public void LimpiarTabla(){
                 .addGap(0, 27, Short.MAX_VALUE))
         );
 
-        Productos_panel.addTab("PROVEEDORES", jPanel5);
+        Venta_panel.addTab("PROVEEDORES", jPanel5);
 
         jLabel29.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel29.setText("CODIGO");
@@ -901,7 +907,7 @@ public void LimpiarTabla(){
                     .addContainerGap(243, Short.MAX_VALUE)))
         );
 
-        Productos_panel.addTab("PRODUCTOS", jPanel6);
+        Venta_panel.addTab("PRODUCTOS", jPanel6);
 
         TablaVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -949,7 +955,7 @@ public void LimpiarTabla(){
                 .addGap(0, 95, Short.MAX_VALUE))
         );
 
-        Productos_panel.addTab("VENTAS", jPanel7);
+        Venta_panel.addTab("VENTAS", jPanel7);
 
         jLabel14.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel14.setText("Nombre");
@@ -1068,9 +1074,9 @@ public void LimpiarTabla(){
                 .addContainerGap(101, Short.MAX_VALUE))
         );
 
-        Productos_panel.addTab("CONFIGURACIÓN", jPanel3);
+        Venta_panel.addTab("CONFIGURACIÓN", jPanel3);
 
-        getContentPane().add(Productos_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 840, 450));
+        getContentPane().add(Venta_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 840, 450));
 
         jPanel2.setBackground(new java.awt.Color(179, 123, 67));
 
@@ -1096,8 +1102,14 @@ public void LimpiarTabla(){
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 860, 90));
-        getContentPane().add(txt_nombre_venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 600, 250, -1));
-        getContentPane().add(txt_cod_venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 600, 160, -1));
+        getContentPane().add(txt_nombrecli_venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 600, 250, -1));
+
+        txt_id_venta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_id_ventaKeyPressed(evt);
+            }
+        });
+        getContentPane().add(txt_id_venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 600, 160, -1));
 
         btn_imprimir_venta.setText("IMPRIMIR");
         btn_imprimir_venta.addActionListener(new java.awt.event.ActionListener() {
@@ -1131,7 +1143,7 @@ public void LimpiarTabla(){
         jLabel10.setBackground(new java.awt.Color(153, 102, 0));
         jLabel10.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(243, 230, 217));
-        jLabel10.setText("Codigo");
+        jLabel10.setText("ID");
         jLabel10.setOpaque(true);
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 560, 90, 30));
 
@@ -1196,7 +1208,7 @@ public void LimpiarTabla(){
         // TODO add your handling code here:
         LimpiarTabla();
         ListarCliente();
-        Productos_panel.setSelectedIndex(1);
+        Venta_panel.setSelectedIndex(1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TABLA_CLIENTEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TABLA_CLIENTEMouseClicked
@@ -1282,7 +1294,7 @@ public void LimpiarTabla(){
         LimpiarTabla();
      
          ListarProveedor();
-        Productos_panel.setSelectedIndex(2);
+        Venta_panel.setSelectedIndex(2);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void TablaProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaProveedorMouseClicked
@@ -1378,7 +1390,7 @@ public void LimpiarTabla(){
         // TODO add your handling code here:
         LimpiarTabla();
         ListarProducto();
-        Productos_panel.setSelectedIndex(3);
+        Venta_panel.setSelectedIndex(3);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void TablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaProductosMouseClicked
@@ -1447,9 +1459,8 @@ public void LimpiarTabla(){
                   txt_cant_venta.requestFocus();
                   
               }else{
-                    txt_Descrip_venta.setText("");
-                  txt_precio_venta.setText("");
-                  txt_stock.setText("");
+                  LimpiarVenta();
+                  
                  txt_codigo_venta.requestFocus();   
               }
           }else{
@@ -1472,9 +1483,10 @@ public void LimpiarTabla(){
                 if(stock >= cant){
                     item = item + 1;
                     modelo = (DefaultTableModel) TablaVenta.getModel();
-                    for(int i = 0; 1< TablaVenta.getRowCount(); i++){
+                    for(int i = 0; i< TablaVenta.getRowCount(); i++){
                         if(TablaVenta.getValueAt(i, 1).equals(txt_Descrip_venta.getText())){
                           JOptionPane.showMessageDialog(null,"EL PRODUCTO YA ESTA REGISTRADO" );   
+                          return;
                         }
                         
                     }
@@ -1493,6 +1505,9 @@ public void LimpiarTabla(){
                     O[4] = lista.get(5);
                     modelo.addRow(O);
                     TablaVenta.setModel(modelo);
+                    TotalPagar();
+                    LimpiarVenta();
+                    txt_codigo_venta.requestFocus();
                 }else{
                     JOptionPane.showMessageDialog(null,"STOCK NO DISPONIBLE :( " ); 
                 }
@@ -1502,6 +1517,31 @@ public void LimpiarTabla(){
         }
     }//GEN-LAST:event_txt_cant_ventaKeyPressed
 
+    private void btn_eliminar_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar_ventaActionPerformed
+        // TODO add your handling code here:
+        modelo = (DefaultTableModel) TablaVenta.getModel();
+        modelo.removeRow(TablaVenta.getSelectedRow());
+        TotalPagar();
+        txt_codigo_venta.requestFocus();
+    }//GEN-LAST:event_btn_eliminar_ventaActionPerformed
+
+    private void txt_id_ventaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_id_ventaKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if(!"".equals(txt_id_venta.getText())){
+                int id = Integer.parseInt(txt_id_venta.getText());
+                cl = client.Buscarcliente(id);
+               
+                if(cl.getNombre() != null){
+                    txt_nombrecli_venta.setText(""+cl.getNombre());
+                   
+            }else{
+                    txt_id_venta.setText("");
+                JOptionPane.showMessageDialog(null,"EL CLIENTE NO EXISTE" );      
+                    }      
+    }//GEN-LAST:event_txt_id_ventaKeyPressed
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -1539,12 +1579,12 @@ public void LimpiarTabla(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Descripción;
-    private javax.swing.JTabbedPane Productos_panel;
     private javax.swing.JTable TABLA_CLIENTE;
     private javax.swing.JTable TablaProductos;
     private javax.swing.JTable TablaProveedor;
     private javax.swing.JTable TablaVenta;
     private javax.swing.JTable TablaVentas;
+    private javax.swing.JTabbedPane Venta_panel;
     private javax.swing.JButton btn_actualizar_cliente;
     private javax.swing.JButton btn_actualizar_producto;
     private javax.swing.JButton btn_actualizar_proveedor;
@@ -1626,7 +1666,6 @@ public void LimpiarTabla(){
     private javax.swing.JTextField txt_Descrip_venta;
     private javax.swing.JTextField txt_cant_producto;
     private javax.swing.JTextField txt_cant_venta;
-    private javax.swing.JTextField txt_cod_venta;
     private javax.swing.JTextField txt_codigo_cliente;
     private javax.swing.JTextField txt_codigo_producto;
     private javax.swing.JTextField txt_codigo_venta;
@@ -1637,11 +1676,12 @@ public void LimpiarTabla(){
     private javax.swing.JTextField txt_id_producto;
     private javax.swing.JTextField txt_id_producto_venta;
     private javax.swing.JTextField txt_id_proveedor;
+    private javax.swing.JTextField txt_id_venta;
     private javax.swing.JTextField txt_nit_cliente;
     private javax.swing.JTextField txt_nombre_cliente;
     private javax.swing.JTextField txt_nombre_producto;
     private javax.swing.JTextField txt_nombre_proveedor;
-    private javax.swing.JTextField txt_nombre_venta;
+    private javax.swing.JTextField txt_nombrecli_venta;
     private javax.swing.JTextField txt_precio_producto;
     private javax.swing.JTextField txt_precio_venta;
     private javax.swing.JComboBox<String> txt_proveedor_producto;
@@ -1672,6 +1712,25 @@ private void LimpiarProductos(){
     txt_precio_producto.setText("");
     txt_proveedor_producto.setSelectedItem(null);
 }
+private void TotalPagar(){
+Totalpagar = 0.00;
+int numFila = TablaVenta.getRowCount();
+ for (int i = 0; i < numFila; i++){
+     double cal = Double.parseDouble(String.valueOf(TablaVenta.getModel().getValueAt(i,3)));
+     Totalpagar = Totalpagar + cal;
+     
+ }   
+labeltotal.setText(String.format("%.2f", Totalpagar));
+}
+private void LimpiarVenta(){
+    
+    txt_codigo_venta.setText("");
+    txt_Descrip_venta.setText("");
+    txt_cant_venta.setText("");
+     txt_stock.setText("");
+      txt_precio_venta.setText("");
+}
+    
  }
 
 

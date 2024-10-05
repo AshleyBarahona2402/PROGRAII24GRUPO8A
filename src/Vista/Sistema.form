@@ -136,7 +136,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JTabbedPane" name="Productos_panel">
+    <Container class="javax.swing.JTabbedPane" name="Venta_panel">
       <Properties>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
@@ -280,6 +280,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="ELIMINAR"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_eliminar_ventaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txt_codigo_venta">
               <Events>
@@ -1531,14 +1534,17 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="txt_nombre_venta">
+    <Component class="javax.swing.JTextField" name="txt_nombrecli_venta">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="480" y="600" width="250" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_cod_venta">
+    <Component class="javax.swing.JTextField" name="txt_id_venta">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_id_ventaKeyPressed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="230" y="600" width="160" height="-1"/>
@@ -1629,7 +1635,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="d9" green="e6" red="f3" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Codigo"/>
+        <Property name="text" type="java.lang.String" value="ID"/>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <Constraints>
